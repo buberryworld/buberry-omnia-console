@@ -1,0 +1,191 @@
+/* Global Styles */
+body {
+  background-color: black; /* Fallback color */
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+    url('./assets/background2.png'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+h1, h2, h3 {
+  font-family: "Courier New", monospace;
+  color: #00ff00;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 12px 0;
+  color: #00cc00; /* Slightly dimmer green */
+}
+
+/* Grid and Card Styles */
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 16px;
+}
+
+.nft-card {
+  background: #101010; /* Dark background */
+  border: 1px solid #00ff00; /* Green border */
+  color: #00ff00; /* Green text */
+  font-family: "Courier New", monospace;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 8px #00ff00; /* Glow effect */
+}
+
+.nft-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border: 1px solid #00ff00;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #101010; /* Dark modal background */
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  font-family: "Courier New", monospace;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #00ff00;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #000000; /* Black background */
+  color: #00cc00; /* Dimmer green text */
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: #00ff00; /* Green links */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+  background: #101010; /* Dark button background */
+  color: #00ff00; /* Green text */
+  border: 1px solid #00ff00;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #202020; /* Slightly brighter on hover */
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #303030; /* Disabled button background */
+  color: #555555; /* Gray text */
+  cursor: not-allowed;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+/* Special Effects */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  z-index: -1;
+  opacity: 0.1;
+}
+.builtOnHederaSVG  {
+  height: 50px;
+  width: auto;
+}
+
+.footer {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: auto;
+  background-color:  #000000;
+}
+
+.hbarLogoImg {
+  width: 36px;
+  height: auto;
+}
+
+.walletLogoImage {
+  width: 30px;
+  height: auto;
+}
