@@ -38,7 +38,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:backend": "ts-node api/index.ts",
-    "start:full": "concurrently \"npm run start\" \"npm run start:backend\""
   },
   "eslintConfig": {
     "extends": "react-app"
