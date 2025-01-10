@@ -155,6 +155,8 @@ const BalancePage: React.FC = () => {
     }
   };
 
+  
+
   const refreshBalances = async () => {
     if (!accountId) return;
   
