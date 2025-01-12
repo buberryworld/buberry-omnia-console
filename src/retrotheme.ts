@@ -22,6 +22,21 @@ export const theme = createTheme({
     fontFamily: "Courier New, Courier, monospace",
   },
   components: {
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "rgba(16, 16, 16, 0.73)", // Slightly transparent dark gray
+          color: "#00FF00", // Bright green text
+          border: "1px solid #00FF00", // Green border
+          borderRadius: "8px", // Rounded corners
+          padding: "16px", // Padding inside the dialog
+          boxShadow: "0 0 15px #00FF00", // Subtle green glow
+        },
+        container: {
+          backgroundColor: "rgba(5, 14, 1, 0.57)", // Transparent black overlay for the background
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {

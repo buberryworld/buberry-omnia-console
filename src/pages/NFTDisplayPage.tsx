@@ -11,15 +11,7 @@ interface NFT {
   serial_number: number;
   image: string;
   metadataPath: string;
-  metadata?: {
-    name?: string;
-    creator?: string;
-    description?: string;
-    type?: string;
-    image?: string;
-    properties?: Record<string, string>;
-    files?: { uri: string; type: string }[];
-  } | null;
+  metadata?: Record<string, any> | null;
 }
 
 interface Stack {
@@ -37,7 +29,6 @@ const NFTDisplayPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Load hidden NFTs from local storage on component mount
   useEffect(() => {
     const storedHiddenNFTs = localStorage.getItem("hiddenNFTs");
     if (storedHiddenNFTs) {
@@ -69,7 +60,6 @@ const NFTDisplayPage: React.FC = () => {
           };
         });
 
-        // Group NFTs by token_id
         const groupedNFTs = new Map<string, NFT[]>();
         enrichedNFTs.forEach((nft) => {
           if (!groupedNFTs.has(nft.token_id)) {
@@ -96,14 +86,12 @@ const NFTDisplayPage: React.FC = () => {
     fetchNFTData();
   }, [accountId]);
 
-  // Function to hide an NFT and persist it in local storage
   const handleHideNFT = (token_id: string) => {
     const updatedHiddenNFTs = [...hiddenNFTs, token_id];
     setHiddenNFTs(updatedHiddenNFTs);
     localStorage.setItem("hiddenNFTs", JSON.stringify(updatedHiddenNFTs));
   };
 
-  // Function to unhide an NFT and update local storage
   const handleUnhideNFT = (token_id: string) => {
     const updatedHiddenNFTs = hiddenNFTs.filter((id) => id !== token_id);
     setHiddenNFTs(updatedHiddenNFTs);
@@ -218,32 +206,57 @@ const NFTDisplayPage: React.FC = () => {
                 <span className="close" onClick={closeMetadata}>
                   &times;
                 </span>
-                <h2>Token ID: {selectedMetadata.token_id}</h2>
-                <p>
-                  <strong>Name:</strong> {selectedMetadata.metadata?.name || "Unnamed NFT"}
-                </p>
-                <p>
-                  <strong>Creator:</strong> {selectedMetadata.metadata?.creator || "Unknown"}
-                </p>
-                <p>
-                  <strong>Description:</strong>{" "}
-                  {selectedMetadata.metadata?.description || "No description available"}
-                </p>
-                <h4>Properties:</h4>
-                <ul>
-                  {selectedMetadata.metadata?.properties
-                    ? Object.entries(selectedMetadata.metadata.properties).map(
-                        ([key, value]) => (
-                          <li key={key}>
-                            <strong>{key}:</strong>{" "}
-                            {typeof value === "string" || typeof value === "number"
-                              ? value
-                              : JSON.stringify(value)}
-                          </li>
-                        )
-                      )
-                    : null}
-                </ul>
+                <div className="modal-layout">
+                  {/* Image Section */}
+                  <div className="modal-image-container">
+                    <img
+                      src={selectedMetadata.metadata?.image}
+                      alt="NFT"
+                      className="modal-image"
+                    />
+                  </div>
+
+                  {/* Metadata Section */}
+                  <div className="modal-text-container">
+                    <h2>Token ID: {selectedMetadata.token_id}</h2>
+                    <p>
+                      <strong>Name:</strong> {selectedMetadata.metadata?.name || "Unnamed NFT"}
+                    </p>
+                    <p>
+                      <strong>Creator:</strong> {selectedMetadata.metadata?.created_by || "Unknown"}
+                    </p>
+                    <p>
+                      <strong>Description:</strong>{" "}
+                      {selectedMetadata.metadata?.description || "No description available"}
+                    </p>
+                    <p>
+                      <strong>Type:</strong> {selectedMetadata.metadata?.type || "Unknown"}
+                    </p>
+                    <p>
+                      <strong>Special Trait:</strong>{" "}
+                      {selectedMetadata.metadata?.special_trait || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Edition:</strong> {selectedMetadata.metadata?.edition || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Use Case:</strong> {selectedMetadata.metadata?.use_case || "N/A"}
+                    </p>
+                    <h4>Properties:</h4>
+                    <ul>
+                      {selectedMetadata.metadata?.properties
+                        ? Object.entries(selectedMetadata.metadata.properties).map(([key, value]) => (
+                            <li key={key}>
+                              <strong>{key}:</strong>{" "}
+                              {typeof value === "string" || typeof value === "number"
+                                ? value
+                                : JSON.stringify(value)}
+                            </li>
+                          ))
+                        : null}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           )}

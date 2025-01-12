@@ -8,6 +8,7 @@ import MetadataCreator from './pages/MetadataCreator';
 import NFTCreationTool from "./pages/NFTCreationTool";
 import MintingTool from "./pages/MintingTool";
 import BurnTokenTool from "./pages/BurnTokenTool";
+import StakingUI from "./pages/StakingUI";
 
 
 
@@ -22,6 +23,7 @@ const AppRouter: React.FC = () => {
       <Route path="/nft-creator" element={<NFTCreationTool />} />
       <Route path="/minting-tool" element={<MintingTool />} />
       <Route path="/burning-tool" element={<BurnTokenTool />} />
+      <Route path="/staking" element={<StakingUI />} />
     </Routes>
   );
 };

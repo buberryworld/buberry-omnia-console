@@ -72,6 +72,10 @@ export default function NavBar() {
           <NavLink to="/nfts" style={navLinkStyles}>
             Card Vault
           </NavLink>
+          <NavLink to="/staking" style={navLinkStyles}>
+            Staking Panel
+          </NavLink>
+          
         </Box>
 
         {/* Wallet Connect Button */}
@@ -111,11 +115,15 @@ export default function NavBar() {
                   Metadata Creator
                 </MenuItem>
                 <MenuItem component={Link} to="/nft-creator">
-                  NFT Creation Tool
+                  NFT Creator
                 </MenuItem>
                 <MenuItem component={Link} to="/minting-tool">
-                  NFT Minting Tool
+                  Minting Tool
                 </MenuItem>
+                <MenuItem component={Link} to="/burning-tool">
+                  Token Burning Tool
+                </MenuItem>
+                
               </Menu>
             </>
           )}

@@ -1,0 +1,53 @@
+{
+  "tokens": [
+    {
+      "token_id": "0.0.5341855",
+      "balance": 2,
+      "metadata": {
+        "name": "Buberry World Founders Card",
+        "creator": "Buberry Worldwide",
+        "description": "The first-ever NFT in the Buberry World series, representing the foundation of a revolutionary initiative. This unique ASCII artwork card symbolizes the origins of Buberry and provides gameplay bonuses in future releases.",
+        "image": "https://ipfs.io/ipfs/bafybeial7je4d3pattwldeo46b2ffdqabghgaigvnx3dyx3zlxsmjkrh7i/founders-card.png",
+        "type": "image/png",
+        "files": [
+          {
+            "uri": "https://ipfs.io/ipfs/bafybeial7je4d3pattwldeo46b2ffdqabghgaigvnx3dyx3zlxsmjkrh7i/founders-card.png",
+            "is_default_file": true,
+            "type": "image/png"
+          }
+        ],
+        "properties": {
+          "Artwork Type": "ASCII",
+          "Edition": "Founders Edition",
+          "Use Case": "Gameplay multiplier and collectible",
+          "Special Trait": "Historic Artifact",
+          "Created By": "Buberry Worldwide"
+        }
+      }
+    },
+    {
+      "token_id": "0.0.5363962",
+      "balance": 11,
+      "metadata": {
+        "name": "Founders' Fertile Valley ",
+        "description": "A lush valley known for its fertile soil and abundant water resources. This region offers high potential for sustainable agriculture and experimental farming.",
+        "artwork_type": "ASCII",
+        "edition": "Special Edition",
+        "use_case": "Agricultural Development",
+        "special_trait": "High Fertility and Abundant Water",
+        "created_by": "Buberry Worldwide",
+        "image": "https://bafybeib6hybpbbntyyxbtnzjobp62evkx3lmzen5yad4trybda6kwf432a.ipfs.w3s.link/fertile_valley_resource.png",
+        "type": "Land",
+        "properties": {
+          "biome": "Temperate",
+          "fertility": 10,
+          "water_availability": "Abundant",
+          "degradation": 1,
+          "plots": 12,
+          "creator": "Buberry Worldwide"
+        }
+      }
+    }
+  ],
+  "landStakings": []
+}
